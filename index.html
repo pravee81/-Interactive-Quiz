@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="page">
+        <h1>🎯Welcome to the Quiz!</h1>
+        <p style="text-align: left; font-size: 16px; font-style: italic; margin-top: 30px;">
+            <strong>📝 Instructions:</strong><br><br>
+             1. You will answer 10 questions, one by one.<br>
+             2. You have 15 minutes in total.<br>
+             3. You can navigate questions using numbers on the bottom.<br>
+             4. Answered questions will show Clay; unanswered in White.<br>
+             5. After submission, you’ll see your score, correct/wrong answers, and unanswered.<br><br>
+            
+             Good luck! 
+        </p>
+        <button onclick="startQuiz()"> Start Quiz</button>
+    </div> 
+
+
+    <!-- Quiz Page -->
+    <div id="quizPage" class="page" style="display:none;">
+        <div id="timer">⏳ 15:00</div>
+        <h2 id="questionTitle"></h2>
+        <h3 id="questionText"></h3>
+        <div id="options"></div>
+        <div class="navigation">
+            <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+            <button id="nextBtn" onclick="nextQuestion()">Next</button>
+            <button id="submitBtn" onclick="submitQuiz()">Submit</button>
+        </div>
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- Result Page -->
+    <div id="resultPage" class="page" style="display:none;">
+        <h1>Your Quiz Results 🎉</h1>
+        <div id="scoreCircle"></div>
+        <div class="legend">
+        <span style="color:green;">✅ Correct Answers</span>
+        <span style="color:red; margin-left: 20px;">❌ Wrong Answers</span>
+        <span style="color:gray; margin-left: 20px;">⚪  Unanswered</span>
+        </div>
+        <button onclick="location.reload()">Play Again </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
